@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compose</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="left-head">
+
+      <h1 style="color: black; font-size: 3rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">New Post 🖋</h1>
+    </div>
+      <div class="form">
+
+      <form action="/compose" method="post" >
+        <label id="label" for="title">Title:</label><br>
+        <input type="text" placeholder="Title..." id="title" name="title" required><br><br>
+        <label id="label" for="description">Description:</label><br>
+        <input type="text" id="description" placeholder="Description..." name="description" minlength="2" maxlength="100" required>
+        <br><br>
+        <label id="label" for="content">Content:</label><br>
+        <textarea id="content" placeholder="Content..." name="content" rows="4" required></textarea>
+        
+        <input type="hidden" id="postDate" name="postDate"><br>
+        
+        <button  id="postDate" type="submit">Publish</button>
+      </form>
+    </div>
+    
+  </div>
+  <script>
+    document.getElementById('postDate').value = new Date().toISOString();
+  </script>
+</body>
+
+</html>

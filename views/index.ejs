@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .posts {
+      overflow-y: auto; 
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="primary-head">Welcome to Blog Website</h1>
+  <h4>Open your ❤ to the World !!</h4>
+  <a  id="compose" class="compose" href="/compose">Create Post</a>
+
+  <div class="posts">
+    <% posts.forEach(post => { %>
+      <div class="post">
+        <h2><%= post.title %></h2>
+        <p><%= post.description %></p>
+
+        <p class="post-date">Posted on: <%= new Date(post.postDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></p><!-- Display the date -->
+        <a id="readb" href="/post/<%= post._id %>">Read More...</a><br>
+        <a id="update" href="/update/<%= post._id %>">Edit</a>
+        <button id="delete" onclick="showConfirmationModal('<%= post._id %>')">Delete</button>
+        
+      </div>
+    <% }); %>
+  </div>
+
+  <div class="confirm-modal" id="confirmModal">
+    <div class="confirm-box">
+      <p>Are you sure you want to delete this post?</p>
+      <div class="confirm-buttons">
+        <button class="yes" onclick="deletePost()">Yes</button>
+        <button class="no" onclick="hideConfirmationModal()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <form id="deleteForm" action="" method="post" style="display: none;">
+    <input type="hidden" id="postIdToDelete" name="postIdToDelete" value="">
+  </form>
+
+  <script>
+    function truncateText(text, numLines) {
+      const lines = text.split('\n').slice(0, numLines);
+      return lines.join('\n');
+    }
+
+    function showConfirmationModal(postId) {
+      document.getElementById('confirmModal').style.display = 'flex';
+      document.getElementById('postIdToDelete').value = postId;
+    }
+
+    function hideConfirmationModal() {
+      document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function deletePost() {
+      const postId = document.getElementById('postIdToDelete').value;
+      document.getElementById('confirmModal').style.display = 'none';
+      document.getElementById('deleteForm').action = `/delete/${postId}`;
+      document.getElementById('deleteForm').submit();
+    }
+  </script>
+</body>
+
+</html>

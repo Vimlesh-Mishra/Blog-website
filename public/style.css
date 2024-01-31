@@ -1,0 +1,402 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0C2D57;
+  margin-bottom: 30px;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  text-align: center;
+  padding: 40px 0;
+  color: #EFECEC;
+}
+
+h4 {
+  text-align: end;
+  padding: 20px 0;
+  margin-right: 100px;
+  color: #EFECEC;
+  font-size: 1.5rem;
+  margin-top: -50px;
+}
+
+#primary-head {
+  font-size: 5rem;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.post {
+  text-align: center;
+  background-color: rgb(255, 250, 214);
+  padding: 15px;
+  width: 350px;
+  position: relative;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 230px;
+  margin: 30px auto;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 243, 152, 0.7);
+  backdrop-filter: blur(25px);
+  box-shadow: -10px 10px 10px rgba(10, 10, 10, 0.25);
+
+  z-index: 10;
+}
+
+.post>div {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.post:hover {
+  transform: translateY(-10px);
+  z-index: 2;
+}
+
+.post div {
+  text-align: center;
+  align-items: center;
+
+}
+
+a,
+button {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.date {
+  color: #888;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.posts {
+  overflow-y: auto;
+}
+
+.confirm-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.confirm-box {
+  border: 2px solid rgba(255, 243, 152, 0.7);
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(255, 253, 236);
+  border-radius: 20px;
+  z-index: 101;
+}
+
+.confirm-buttons button {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 102;
+  border-radius: 10px;
+  border: rgba(255, 243, 152, 0.7);
+
+}
+
+.yes {
+  background-color: #33b249;
+  color: white;
+}
+
+.no {
+  background-color: red;
+  color: white;
+}
+
+.yes:hover {
+  color: white;
+}
+
+.no:hover {
+  color: white;
+}
+
+.compose {
+  border-right: 100px;
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: #FC6736;
+  border-radius: 10px;
+  margin-left: 46%;
+}
+
+
+
+input {
+  border: none;
+  padding: 2px 15px;
+  background-color: #fffad6;
+}
+
+.main {
+  display: flex;
+}
+
+.left-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background: linear-gradient(#fffad6, #EFECEC);
+  height: 100vh;
+}
+
+.form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#title {
+  margin-left: 50px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 500px;
+
+}
+
+#description {
+  margin-left: 50px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+#content {
+  margin-left: 50px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 15px;
+  width: 500px;
+  height: 200px;
+  border: none;
+  background-color: #fffad6;
+}
+
+#label {
+  margin-left: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #EFECEC;
+}
+
+#postDate {
+  margin-left: 490px;
+  padding: 15px 25px;
+  border-radius: 20px;
+  background-color: #FC6736;
+  color: #EFECEC;
+  border: none;
+  margin-top: 20px;
+}
+
+#postDate:hover {
+  cursor: pointer;
+  color: black;
+  background-color: greenyellow;
+  transition: ease-in-out;
+}
+
+#titleu {
+  margin-left: 240px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+#descriptionu {
+  margin-left: 240px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+#contentu {
+  margin-left: 240px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  height: 200px;
+  width: 525px;
+  background-color: #fffad6;
+}
+
+#labelu {
+  margin-left: 240px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 500px;
+  color: #EFECEC;
+}
+
+#updatebutton {
+  padding: 10px;
+  border-radius: 10px;
+  width: 75px;
+  margin-top: 20px;
+  border: none;
+  background-color: greenyellow;
+  margin-left: 100px;
+  color: black;
+}
+
+#updatebutton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#backtohome {
+  padding: 10px;
+  border-radius: 10px;
+  width: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+#backtohome:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  width: 525px;
+  position: relative;
+  margin-left: 243px;
+}
+
+#readb:hover {
+  color: blueviolet;
+}
+
+#readb {
+  color: blue;
+}
+
+#update {
+  font-size: 15px;
+  text-decoration: none;
+  padding: 7px;
+  padding-left: 45px;
+  padding-right: 45px;
+  border-radius: 10px;
+  background-color: #1caa33;
+  color: white;
+  margin-top: 5px;
+}
+
+#delete {
+  width: 125px;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  margin-top: 5px;
+}
+
+#delete:hover {
+  cursor: pointer;
+}
+
+.post a#update {
+  margin-right: 20px;
+}
+
+.post button#delete {
+  margin-left: 20px;
+}
+
+#ptitle {
+  font-size: 3rem;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: #EFECEC;
+}
+
+#pdesc {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 3%;
+  color: #EFECEC;
+
+}
+
+#desc {
+  margin-left: 10%;
+  font-size: 20px;
+  color: #EFECEC;
+}
+
+#pcontent {
+  margin-top: 25px;
+  font-size: 17px;
+  margin-left: 6.5%;
+  max-width: 86vw;
+  word-wrap: break-word;
+  border: 0px dotted black;
+  color: #EFECEC;
+
+}
+
+#hrr {
+  border-style: dashed;
+  width: 95%;
+  color: #EFECEC;
+
+}
+
+#backtohomee {
+  border-right: 100px;
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: #FC6736;
+  border-radius: 10px;
+  margin-left: 46%;
+}

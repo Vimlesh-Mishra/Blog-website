@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Post</title>
+  <link rel="stylesheet" href="/style.css">
+  
+</head>
+
+<body>
+<div class="main">
+
+  <div class="left-head">
+    <h1 style="color: black; font-size: 3rem;">Edit Post 🖋</h1>
+  </div>
+  
+  <div class="form">
+    
+    <form  action="/update/<%= post._id %>" method="post">
+      <label id="labelu" for="title">Title:</label><br>
+      <input type="text" id="titleu" name="title" value="<%= post.title %>" required><br><br>
+      <label id="labelu" for="description">Description:</label><br>
+      <input type="text" id="descriptionu" name="description" value="<%= post.description %>" minlength="2" maxlength="100" required>
+      <br><br>
+      <label id="labelu" for="content">Content:</label><br>
+      <textarea id="contentu" name="content" rows="4" required><%= post.content %></textarea>
+      <div class="btn-container">
+
+        <button id="updatebutton" type="button" onclick="showConfirmationModal()">Save</button>
+        <a id="backtohome" href="/">←</a>
+      </div>
+    </form>
+    
+  </div>
+</div>
+  
+  <div class="confirm-modal" id="confirmModal">
+    <div class="confirm-box">
+      <p>Are you sure you want to update this post?</p>
+      <div class="confirm-buttons">
+        <button class="yes" onclick="updatePost()">Yes</button>
+        <button class="no" onclick="hideConfirmationModal()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showConfirmationModal() {
+      document.getElementById('confirmModal').style.display = 'flex';
+    }
+
+    function hideConfirmationModal() {
+      document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function updatePost() {
+      document.getElementById('confirmModal').style.display = 'none';
+      document.getElementById('updateForm').submit();
+    }
+  </script>
+</body>
+
+</html>
